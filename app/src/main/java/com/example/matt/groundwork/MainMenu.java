@@ -48,4 +48,12 @@ public class MainMenu extends ActionBarActivity {
         //intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
+    public void openStats(View view)
+    {
+        Intent intent = new Intent(this, StatsPage.class);
+        //EditText editText = (EditText) findViewById(R.id.edit_message);
+        //String message = editText.getText().toString();
+        //intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
 }

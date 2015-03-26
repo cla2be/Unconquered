@@ -8,6 +8,19 @@
     <string name="action_map">Map</string>
     <string name="action_stats">Stats</string>
     <string name="title_activity_chat">Chat</string>
-
+    <string name="Blank_String"> </string>
+    <string name="STATS">STATS</string>
+    <string name="STR">STR:</string>
+    <string name="END">END:</string>
+    <string name="CHR">CHR:</string>
+    <string name="INT">INT:</string>
+    <string name="AGL">AGL:</string>
+    <string name="LCK">LCK:</string>
+    <string name="Stat_STR">10</string>
+    <string name="Stat_END">20</string>
+    <string name="Stat_CHR">35</string>
+    <string name="Stat_INT">6</string>
+    <string name="Stat_AGL">25</string>
+    <string name="Stat_LCK">12</string>
 
 </resources>
