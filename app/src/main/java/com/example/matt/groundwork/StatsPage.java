@@ -38,8 +38,6 @@ public class StatsPage
 
         public void CloseStats(View view)
         {
-            Intent intent = new Intent(this, MainMenu.class);
-            startActivity(intent);
             finish();
         }
 
