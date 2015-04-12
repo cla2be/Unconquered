@@ -15,6 +15,8 @@ public class MainMenu extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+
     }
 
 
@@ -51,6 +53,14 @@ public class MainMenu extends ActionBarActivity {
     public void openStats(View view)
     {
         Intent intent = new Intent(this, StatsPage.class);
+        //EditText editText = (EditText) findViewById(R.id.edit_message);
+        //String message = editText.getText().toString();
+        //intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
+    public void openFight(View view)
+    {
+        Intent intent = new Intent(this, FightPage.class);
         //EditText editText = (EditText) findViewById(R.id.edit_message);
         //String message = editText.getText().toString();
         //intent.putExtra(EXTRA_MESSAGE, message);

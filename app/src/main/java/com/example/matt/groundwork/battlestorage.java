@@ -8,6 +8,10 @@ public class battlestorage {
     Actions  Record[];
     int SizeOfStorage;
 
+    Players Player1;
+    Players Player2;
+
+    int winner;
 
     public battlestorage ()
     {
@@ -32,6 +36,19 @@ public class battlestorage {
         }
         SizeOfStorage++;
     }
+
+    public String Summery()
+    {
+        String Output= "";
+
+        if (winner==0)
+            Output+="You won!";
+        else
+            Output+="You lost!";
+
+        return Output;
+    }
+
     public String OutputRecord(){
         String Output= "";
         Output+=Record[0].WhoDunIt;
@@ -71,10 +88,15 @@ public class battlestorage {
     }
 
 
-    int Fight(Players Player1, Players Player2,battlestorage Recording) {
+    int Fight(Players Player1in, Players Player2in) {
         Minions m1 = null, m2 = null;
         int result, turn;
         Actions SendToRecord=new Actions();
+
+
+        Player1=Player1in;
+        Player2=Player2in;
+
 
         if (Math.random() % Player1.Initiation() >= Math.random() % Player2.Initiation())
             turn = 1;
@@ -105,7 +127,7 @@ public class battlestorage {
 
             SendToRecord.damage = result;
             SendToRecord.min = false;
-            Recording.newRecord(SendToRecord);
+            this.newRecord(SendToRecord);
             if (result == -1)
                 return turn;
             else if (result == -2) {
@@ -134,7 +156,7 @@ public class battlestorage {
                 SendToRecord.damage = result;
                 SendToRecord.min = true;
 
-                Recording.newRecord(SendToRecord);
+                this.newRecord(SendToRecord);
 
                 if (result == -1)
                     return 1;
@@ -150,7 +172,7 @@ public class battlestorage {
                 SendToRecord.damage = result;
                 SendToRecord.min = true;
 
-                Recording.newRecord(SendToRecord);
+                this.newRecord(SendToRecord);
                 if (result == -1)
                     return turn;
 
@@ -173,7 +195,7 @@ public class battlestorage {
                 SendToRecord.damage = result;
                 SendToRecord.min = false;
                 SendToRecord.name = "Poison";
-                Recording.newRecord(SendToRecord);
+                this.newRecord(SendToRecord);
             } else if
                     (turn==0 && Player2.Poisened != 0) {
                 result = Player2.Damage(Player1.Poisened);
@@ -181,9 +203,9 @@ public class battlestorage {
                 SendToRecord.damage = result;
                 SendToRecord.min = false;
                 SendToRecord.name = "Poison";
-                Recording.newRecord(SendToRecord);
+                this.newRecord(SendToRecord);
             }
-
+            winner=turn;
             turn++;
         }
     }

@@ -7,9 +7,11 @@
     <string name="action_chat">Chat</string>
     <string name="action_map">Map</string>
     <string name="action_stats">Stats</string>
+    <string name="action_Fight">Fights</string>
     <string name="title_activity_chat">Chat</string>
     <string name="Blank_String"> </string>
     <string name="STATS">STATS</string>
+    <string name="Fight">Fights:</string>
     <string name="STR">STR:</string>
     <string name="END">END:</string>
     <string name="CHR">CHR:</string>
@@ -22,5 +24,6 @@
     <string name="Stat_INT">6</string>
     <string name="Stat_AGL">25</string>
     <string name="Stat_LCK">12</string>
+    <string name="Fight1">Fight</string>
 
 </resources>
