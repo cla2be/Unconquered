@@ -1,13 +1,16 @@
 package com.example.matt.groundwork;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 /**
  * Created by matt_000 on 3/26/2015.
  */
+
 public class FightPage
     extends ActionBarActivity
 
@@ -17,7 +20,16 @@ public class FightPage
         protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fight);
+
+            Intent intent = getIntent();
     }
+
+        @Override
+        public boolean onCreateOptionsMenu(Menu menu) {
+            // Inflate the menu; this adds items to the action bar if it is present.
+            getMenuInflater().inflate(R.menu.menu_chat, menu);
+            return true;
+        }
 
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {

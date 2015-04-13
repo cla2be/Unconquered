@@ -47,6 +47,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.matt.groundwork.StatsPage" />
         </activity>
+        <activity
+            android:name=".FightPage"
+            android:label="@string/title_activity_chat"
+            android:parentActivityName=".MainMenu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.matt.groundwork.StatsPage" />
+        </activity>
 
     </application>
 
