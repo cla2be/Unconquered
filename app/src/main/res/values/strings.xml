@@ -28,4 +28,13 @@
     <string name="SetMove">Set Moves</string>
     <string name="Select">Select</string>
 
+    <string name="hello">Welcome to Unconquered</string>
+    <string name="u">Email</string>
+    <string name="l">Login</string>
+    <string name="r">Register</string>
+    <string name="p">......</string>
+
+    <string name="currentUser">Welcome %1$ to die!!</string>
+
+
 </resources>
