@@ -19,6 +19,7 @@ public class Players {
 
     public Players(int STRin, int ENDin, int CHRin, int INTin, int AGLin, int LCKin)
     {
+        STATS =new Statistics();
         nextMove=0;
         STATS.STR = STRin;
         STATS.END = ENDin;
