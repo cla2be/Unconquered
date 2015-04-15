@@ -18,6 +18,7 @@ public class LoginActivity extends Activity {
     EditText txtPassword;
     Button btnLogin;
     Button btnRegister;
+    String currentUser;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,15 +51,18 @@ public class LoginActivity extends Activity {
                                     "Successfully Logged In. Welcome " + username, Toast.LENGTH_LONG)
                                     .show();
 
-                            btnLogin.setOnClickListener(new View.OnClickListener() {
+                            currentUser = username;
+                            Bundle bundle = new Bundle();
+                            bundle.putString("currUser", currentUser);
 
-                                public void onClick(View view) {
+
                                     Intent i = new Intent(getApplicationContext(),
                                             MainMenu.class);
+                                    i.putExtras(bundle);
                                     startActivity(i);
                                     finish();
-                                }
-                            });
+
+
 
                         } else {
                             Toast.makeText(LoginActivity.this,
