@@ -50,11 +50,74 @@ public class FightPage
         public void addFight(View view)
         {
                 battlestorage NextFight = new battlestorage();
-                //NextFight.Fight(Global.ThisPlayer,Global.ThisPlayer);
+                Players player2= new Players(5,50,5,5,5,5);
+            Stat StatToUse;
+            Ailments AilToUse;
+            Moves Attacks[] = new Moves[9];
+
+            StatToUse=Stat.Str;
+            AilToUse=Ailments.None;
+            Attacks[0]=new
+
+                    Moves("Basic Attack",StatToUse, 1,10,AilToUse);
+
+            Attacks[1]=new
+
+                    Moves("Strong Attack",StatToUse, 5,0,AilToUse);
+
+            AilToUse=Ailments.Stun;
+            Attacks[2]=new
+
+                    Moves("Dizzy Strike",StatToUse, 3,0,AilToUse);
+
+            AilToUse=Ailments.None;
+
+            StatToUse=Stat.Chr;
+            Attacks[3]=new
+
+                    Moves("Imp",StatToUse, 10,3,AilToUse);
+
+            AilToUse=Ailments.Poison;
+            Attacks[4]=new
+
+                    Moves("Smoke Cloud",StatToUse, 1,5,AilToUse);
+
+            AilToUse=Ailments.Burnt;
+            Attacks[5]=new
+
+                    Moves("Fireball",StatToUse, 4,1,AilToUse);
+
+            AilToUse=Ailments.Freeze;
+            Attacks[6]=new
+
+                    Moves("Frost",StatToUse, 4,1,AilToUse);
+
+            AilToUse=Ailments.Poison;
+            Attacks[7]=new
+
+                    Moves("Needle",StatToUse, 4,1,AilToUse);
+
+            AilToUse=Ailments.Stun;
+            Attacks[8]=new
+
+                    Moves("Lightning Strike",StatToUse, 4,1,AilToUse);
+
+            player2.SetMoves(Attacks,9);
+                NextFight.Fight(Global.ThisPlayer,player2);
                 Global.addBattle(NextFight);
                 TextView out = (TextView) findViewById(R.id.textView19);
             out.setText(NextFight.Summery());
+            Global.ThisPlayer.Restore();
 
+        }
+
+        public void OpenDetails(View view)
+        {
+            Intent intent = new Intent(this, DetailsOfFight.class);
+            //EditText editText = (EditText) findViewById(R.id.edit_message);
+            //String message = editText.getText().toString();
+            //intent.putExtra(EXTRA_MESSAGE, message);
+            startActivity(intent);
         }
 
         public void CloseFight(View view)

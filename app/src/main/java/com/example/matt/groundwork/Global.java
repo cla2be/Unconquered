@@ -9,6 +9,7 @@ public class Global extends Application {
     private static battlestorage Battles[];
     private static  int numberOfBattles=0;
     public static Players ThisPlayer;
+    public static int lookat=0;
 
     public static battlestorage GetBattle(int i){
         if (i<numberOfBattles)
@@ -31,9 +32,8 @@ public class Global extends Application {
         for(int i=0; i< numberOfBattles;i++) {
             hold [i]=Battles[i];
         }
-        numberOfBattles++;
         hold[numberOfBattles]= in;
-
+        numberOfBattles++;
         Battles= hold;
     }
 }

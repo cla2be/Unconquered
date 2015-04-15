@@ -25,9 +25,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=" "
+            android:text="@string/NoFight"
             android:id="@+id/textView19"
             android:layout_column="0" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/LookAt"
+            android:id="@+id/button8"
+            android:layout_column="5"
+            android:onClick="OpenDetails" />
     </TableRow>
 
 

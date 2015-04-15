@@ -85,7 +85,7 @@ public class StatsPage
 
     Attacks[1]=new
 
-    Moves("Strong Attack",StatToUse, 5,-1,AilToUse);
+    Moves("Strong Attack",StatToUse, 5,0,AilToUse);
 
     AilToUse=Ailments.Stun;
     Attacks[2]=new

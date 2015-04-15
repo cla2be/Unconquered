@@ -24,7 +24,7 @@ public class Moves {
 
     int Use(Statistics STATSIN, int Aglin)
     {
-        double Dodge= Math.random() %100;
+        double Dodge= Math.random()*100 %100;
         if (type== Stat.Chr)
             return -2;
         if (Aglin+10 >Dodge)

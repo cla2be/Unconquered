@@ -52,7 +52,7 @@ public class battlestorage {
     public String OutputRecord(){
         String Output= "";
         Output+=Record[0].WhoDunIt;
-        Output+=" goes first";
+        Output+=" goes first\n";
         for(int i=0;i<SizeOfStorage;i++)
         {
             Output+=Record[i].WhoDunIt;
@@ -91,7 +91,7 @@ public class battlestorage {
     int Fight(Players Player1in, Players Player2in) {
         Minions m1 = null, m2 = null;
         int result, turn;
-        Actions SendToRecord=new Actions();
+        Actions SendToRecord;
 
 
         Player1=Player1in;
@@ -104,6 +104,7 @@ public class battlestorage {
             turn = 2;
         while (true) {
             turn = turn % 2; // player 2 = 0
+            SendToRecord=new Actions();
 
             if (turn==1) {
                 SendToRecord.WhoDunIt = "Player 1 ";
@@ -128,6 +129,7 @@ public class battlestorage {
             SendToRecord.damage = result;
             SendToRecord.min = false;
             this.newRecord(SendToRecord);
+            SendToRecord=new Actions();
             if (result == -1)
                 return turn;
             else if (result == -2) {
@@ -157,6 +159,7 @@ public class battlestorage {
                 SendToRecord.min = true;
 
                 this.newRecord(SendToRecord);
+                SendToRecord=new Actions();
 
                 if (result == -1)
                     return 1;
@@ -173,6 +176,7 @@ public class battlestorage {
                 SendToRecord.min = true;
 
                 this.newRecord(SendToRecord);
+                SendToRecord=new Actions();
                 if (result == -1)
                     return turn;
 
