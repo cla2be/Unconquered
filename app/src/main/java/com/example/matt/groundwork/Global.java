@@ -7,17 +7,25 @@ import android.app.Application;
  */
 public class Global extends Application {
     private static battlestorage Battles[];
-    private static  int numberOfBattles;
+    private static  int numberOfBattles=0;
     public static Players ThisPlayer;
 
-    public battlestorage GetBattle(int i){
+    public static battlestorage GetBattle(int i){
         if (i<numberOfBattles)
-            return this.Battles[i];
+            return Battles[i];
         else
             return null;
     }
 
-    public void addBattle(battlestorage in){
+    public static void addBattle(battlestorage in){
+        if(numberOfBattles==0)
+        {
+            numberOfBattles++;
+            Battles=new battlestorage[1];
+            Battles[0]= in;
+            return;
+        }
+
         battlestorage hold[]= new battlestorage [numberOfBattles+1];
 
         for(int i=0; i< numberOfBattles;i++) {

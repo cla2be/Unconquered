@@ -253,9 +253,10 @@
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="New CheckBox"
+                        android:text="@string/Select"
                         android:id="@+id/checkBox"
-                        android:layout_column="6" />
+                        android:layout_column="6"
+                        android:checked="false" />
                 </TableRow>
 
                 <TableRow
@@ -272,7 +273,7 @@
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="New CheckBox"
+                        android:text="@string/Select"
                         android:id="@+id/checkBox2"
                         android:layout_column="6" />
                 </TableRow>
@@ -291,7 +292,7 @@
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="New CheckBox"
+                        android:text="@string/Select"
                         android:id="@+id/checkBox5"
                         android:layout_column="6" />
                 </TableRow>
@@ -310,7 +311,7 @@
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="New CheckBox"
+                        android:text="@string/Select"
                         android:id="@+id/checkBox3"
                         android:layout_column="6" />
                 </TableRow>
@@ -329,7 +330,7 @@
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="New CheckBox"
+                        android:text="@string/Select"
                         android:id="@+id/checkBox6"
                         android:layout_column="6" />
                 </TableRow>
@@ -348,7 +349,7 @@
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="New CheckBox"
+                        android:text="@string/Select"
                         android:id="@+id/checkBox7"
                         android:layout_column="6" />
                 </TableRow>
@@ -367,7 +368,7 @@
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="New CheckBox"
+                        android:text="@string/Select"
                         android:id="@+id/checkBox8"
                         android:layout_column="6" />
                 </TableRow>
@@ -386,7 +387,7 @@
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="New CheckBox"
+                        android:text="@string/Select"
                         android:id="@+id/checkBox9"
                         android:layout_column="6" />
                 </TableRow>
@@ -399,7 +400,8 @@
             android:layout_height="wrap_content"
             android:text="@string/SetMove"
             android:id="@+id/button7"
-            android:layout_column="6" />
+            android:layout_column="6"
+            android:onClick="MoveToSet" />
 
     </TableRow>
 
