@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 /**
  * Created by matt_000 on 3/26/2015.
@@ -51,6 +52,8 @@ public class FightPage
                 battlestorage NextFight = new battlestorage();
                 //NextFight.Fight(Global.ThisPlayer,Global.ThisPlayer);
                 Global.addBattle(NextFight);
+                TextView out = (TextView) findViewById(R.id.textView19);
+            out.setText(NextFight.Summery());
 
         }
 
