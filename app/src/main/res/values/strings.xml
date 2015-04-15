@@ -23,6 +23,7 @@
     <string name="Stat_INT">6</string>
     <string name="Stat_AGL">25</string>
     <string name="Stat_LCK">12</string>
+    <string name="title_activity_map">Map</string>
     <string name="Fight1">Fight</string>
     <string name="Attacks">Attacks:</string>
     <string name="SetMove">Set Moves</string>

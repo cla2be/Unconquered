@@ -11,17 +11,17 @@ import android.view.View;
 public class MainMenu extends ActionBarActivity {
 
     //Get the bundle
-    Bundle bundle = getIntent().getExtras();
+    //Bundle bundle = getIntent().getExtras();
 
     //Extract the data…
-    String stuff = bundle.getString("currUser");
+    //String stuff = bundle.getString("currUser");
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-
+/*
         Global.ThisPlayer= new Players(1,1,1,1,1,1);
 
 
@@ -31,8 +31,7 @@ public class MainMenu extends ActionBarActivity {
         Standard_Attacks[1]=Standard_Attack;
 
         Global.ThisPlayer.SetMoves(Standard_Attacks,1);
-
-
+*/
     }
 
 
@@ -83,4 +82,11 @@ public class MainMenu extends ActionBarActivity {
         //intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
+
+    public void openMap(View view)
+    {
+        Intent intent = new Intent(this, MapActivity.class);
+        startActivity(intent);
+    }
+
 }
