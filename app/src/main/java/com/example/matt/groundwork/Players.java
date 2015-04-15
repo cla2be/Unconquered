@@ -19,6 +19,8 @@ public class Players {
 
     public Players(int STRin, int ENDin, int CHRin, int INTin, int AGLin, int LCKin)
     {
+
+        STATS =new Statistics();
         nextMove=0;
         STATS.STR = STRin;
         STATS.END = ENDin;
@@ -36,8 +38,10 @@ public class Players {
     {
         return STATS;
     }
+
     void SetMoves (Moves Set[], int MaxIn)
     {
+
         Sequence = Set;
 
         maxMoves= MaxIn;

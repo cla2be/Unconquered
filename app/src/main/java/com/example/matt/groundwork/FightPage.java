@@ -46,10 +46,12 @@ public class FightPage
         return super.onOptionsItemSelected(item);
     }
 
-        public void addFight()
+        public void addFight(View view)
         {
-            battlestorage NextFight = new battlestorage();
-            NextFight.Fight(new Players(1,1,1,1,1,1),new  Players(1,1,1,1,1,1));
+                battlestorage NextFight = new battlestorage();
+                //NextFight.Fight(Global.ThisPlayer,Global.ThisPlayer);
+                Global.addBattle(NextFight);
+
         }
 
         public void CloseFight(View view)
