@@ -16,11 +16,8 @@ public class MainMenu extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-
-        Global.ThisPlayer= new Players(10,1,10,10,10,10);
 /*
-        Global.ThisPlayer= new Players(1,1,1,1,1,1);
-
+        Global.ThisPlayer= new Players(10,1,10,10,10,10);
 
         Moves Standard_Attack= new Moves("Basic Attack",Stat.Str,1,10,Ailments.None);
         Moves Standard_Attacks[] = new Moves[2];
