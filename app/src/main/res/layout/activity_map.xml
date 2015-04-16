@@ -34,7 +34,7 @@
         android:text=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/latText"
+        android:layout_below="@id/latText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -43,7 +43,7 @@
         android:text=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lngText"
+        android:layout_below="@id/lngText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

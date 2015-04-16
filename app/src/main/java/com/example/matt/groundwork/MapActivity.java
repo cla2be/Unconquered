@@ -38,6 +38,15 @@ public class MapActivity extends FragmentActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
+        latText = new TextView(this);
+        lngText = new TextView(this);
+        timeText = new TextView(this);
+
+        latText = (TextView)findViewById(R.id.latText);
+        lngText = (TextView)findViewById(R.id.lngText);
+        timeText = (TextView)findViewById(R.id.timeText);
+
+
         buildGoogleApiClient();
 
         setUpMapIfNeeded();
