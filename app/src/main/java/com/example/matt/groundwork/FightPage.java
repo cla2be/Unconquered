@@ -23,6 +23,43 @@ public class FightPage
         setContentView(R.layout.activity_fight);
 
             Intent intent = getIntent();
+
+            TextView out;
+
+            switch(Global.GetBattleNum()) {
+                default:
+                    out = (TextView) findViewById(R.id.textView38);
+                    out.setText( Global.GetBattle(Global.GetBattleNum() - 10).Summery());
+                case 9:
+                    out = (TextView) findViewById(R.id.textView37);
+                    out.setText( Global.GetBattle(Global.GetBattleNum() - 9).Summery());
+                case 8:
+                    out = (TextView) findViewById(R.id.textView36);
+                    out.setText( Global.GetBattle(Global.GetBattleNum() - 8).Summery());
+                case 7:
+                    out = (TextView) findViewById(R.id.textView35);
+                    out.setText( Global.GetBattle(Global.GetBattleNum() - 7).Summery());
+                case 6:
+                    out = (TextView) findViewById(R.id.textView34);
+                    out.setText( Global.GetBattle(Global.GetBattleNum() - 6).Summery());
+                case 5:
+                    out = (TextView) findViewById(R.id.textView33);
+                    out.setText( Global.GetBattle(Global.GetBattleNum() - 5).Summery());
+                case 4:
+                    out = (TextView) findViewById(R.id.textView32);
+                    out.setText( Global.GetBattle(Global.GetBattleNum() - 4).Summery());
+                case 3:
+                    out = (TextView) findViewById(R.id.textView31);
+                    out.setText( Global.GetBattle(Global.GetBattleNum() - 3).Summery());
+                case 2:
+                    out = (TextView) findViewById(R.id.textView30);
+                    out.setText( Global.GetBattle(Global.GetBattleNum() - 2).Summery());
+                case 1:
+                    out = (TextView) findViewById(R.id.textView19);
+                    out.setText( Global.GetBattle(Global.GetBattleNum()-1).Summery());
+                case 0:
+                        break;
+            }
     }
 
         @Override
@@ -50,7 +87,7 @@ public class FightPage
         public void addFight(View view)
         {
                 battlestorage NextFight = new battlestorage();
-                Players player2= new Players(5,50,5,5,5,5);
+                Players player2= new Players(5,1,5,5,5,5);
             Stat StatToUse;
             Ailments AilToUse;
             Moves Attacks[] = new Moves[9];
@@ -105,14 +142,89 @@ public class FightPage
             player2.SetMoves(Attacks,9);
                 NextFight.Fight(Global.ThisPlayer,player2);
                 Global.addBattle(NextFight);
-                TextView out = (TextView) findViewById(R.id.textView19);
-            out.setText(NextFight.Summery());
+                TextView out;
+
+
+
+            switch(Global.GetBattleNum()) {
+                default:
+                    out = (TextView) findViewById(R.id.textView38);
+                    out.setText( Global.GetBattle(Global.GetBattleNum() - 10).Summery());
+                case 9:
+                    out = (TextView) findViewById(R.id.textView37);
+                    out.setText( Global.GetBattle(Global.GetBattleNum() - 9).Summery());
+                case 8:
+                    out = (TextView) findViewById(R.id.textView36);
+                    out.setText( Global.GetBattle(Global.GetBattleNum() - 8).Summery());
+                case 7:
+                    out = (TextView) findViewById(R.id.textView35);
+                    out.setText( Global.GetBattle(Global.GetBattleNum() - 7).Summery());
+                case 6:
+                    out = (TextView) findViewById(R.id.textView34);
+                    out.setText( Global.GetBattle(Global.GetBattleNum() - 6).Summery());
+                case 5:
+                    out = (TextView) findViewById(R.id.textView33);
+                    out.setText( Global.GetBattle(Global.GetBattleNum() - 5).Summery());
+                case 4:
+                    out = (TextView) findViewById(R.id.textView32);
+                    out.setText( Global.GetBattle(Global.GetBattleNum() - 4).Summery());
+                case 3:
+                    out = (TextView) findViewById(R.id.textView31);
+                    out.setText( Global.GetBattle(Global.GetBattleNum() - 3).Summery());
+                case 2:
+                    out = (TextView) findViewById(R.id.textView30);
+                    out.setText( Global.GetBattle(Global.GetBattleNum() - 2).Summery());
+                case 1:
+                    out = (TextView) findViewById(R.id.textView19);
+                    out.setText( Global.GetBattle(Global.GetBattleNum()-1).Summery());
+
+            }
+
+
+
+
+
             Global.ThisPlayer.Restore();
 
         }
 
         public void OpenDetails(View view)
         {
+            switch(view.getId()) {
+
+                case R.id.button8:
+                    Global.lookat=Global.GetBattleNum() - 1;
+                    break;
+                case R.id.button9:
+                    Global.lookat=Global.GetBattleNum() - 2;
+                    break;
+
+                case R.id.button10:
+                    Global.lookat=Global.GetBattleNum() - 3;
+                    break;
+                case R.id.button11:
+                    Global.lookat=Global.GetBattleNum() - 4;
+                    break;
+                case R.id.button12:
+                    Global.lookat=Global.GetBattleNum() - 5;
+                    break;
+                case R.id.button13:
+                    Global.lookat=Global.GetBattleNum() - 6;
+                    break;
+                case R.id.button14:
+                    Global.lookat=Global.GetBattleNum() - 7;
+                    break;
+                case R.id.button15:
+                    Global.lookat=Global.GetBattleNum() - 8;
+                    break;
+                case R.id.button16:
+                    Global.lookat=Global.GetBattleNum() - 9;
+                    break;
+                case R.id.button17:
+                    Global.lookat=Global.GetBattleNum() - 10;
+                    break;
+
+            }
             Intent intent = new Intent(this, DetailsOfFight.class);
             //EditText editText = (EditText) findViewById(R.id.edit_message);
             //String message = editText.getText().toString();

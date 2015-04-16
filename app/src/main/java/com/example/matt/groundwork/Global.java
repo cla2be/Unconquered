@@ -18,6 +18,10 @@ public class Global extends Application {
             return null;
     }
 
+    public static int GetBattleNum(){
+            return numberOfBattles;
+    }
+
     public static void addBattle(battlestorage in){
         if(numberOfBattles==0)
         {
