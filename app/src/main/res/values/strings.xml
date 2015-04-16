@@ -28,6 +28,8 @@
     <string name="Attacks">Attacks:</string>
     <string name="SetMove">Set Moves</string>
     <string name="Select">Select</string>
+    <string name="LookAt">Details</string>
+    <string name="NoFight">No Fights Recorded</string>
 
     <string name="hello">Welcome to Unconquered</string>
     <string name="u">Email</string>

@@ -80,6 +80,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.matt.groundwork.StatsPage" />
         </activity>
+        <activity
+            android:name=".DetailsOfFight"
+            android:label="@string/title_activity_chat"
+            android:parentActivityName=".FightPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.matt.groundwork.DetailsOfFight" />
+        </activity>
 
     </application>
 

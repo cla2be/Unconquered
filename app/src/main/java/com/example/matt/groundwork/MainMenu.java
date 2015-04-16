@@ -1,26 +1,23 @@
 package com.example.matt.groundwork;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 
 public class MainMenu extends ActionBarActivity {
-
-    //Get the bundle
-    //Bundle bundle = getIntent().getExtras();
-
-    //Extract the data…
-    //String stuff = bundle.getString("currUser");
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+        Global.ThisPlayer= new Players(10,1,10,10,10,10);
 /*
         Global.ThisPlayer= new Players(1,1,1,1,1,1);
 
@@ -64,7 +61,6 @@ public class MainMenu extends ActionBarActivity {
         //String message = editText.getText().toString();
         //intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
-
     }
     public void openStats(View view)
     {

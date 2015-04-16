@@ -17,6 +17,8 @@ public class Players {
     Ailments Affected;
     int Poisened;
 
+    public Players(){}
+
     public Players(int STRin, int ENDin, int CHRin, int INTin, int AGLin, int LCKin)
     {
 
@@ -38,6 +40,13 @@ public class Players {
     {
         return STATS;
     }
+
+    public void Restore()
+    { nextMove=0;
+
+        Health = STATS.END*5+20;
+        Affected = Ailments.None;
+        Poisened=0;}
 
     void SetMoves (Moves Set[], int MaxIn)
     {
