@@ -20,6 +20,9 @@ public class LoginActivity extends Activity {
     Button btnRegister;
     String currentUser;
 
+    Global global = Global.getInstance();
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +36,7 @@ public class LoginActivity extends Activity {
         dbAdapter = new DBAdapter(this);
         dbAdapter.open();
 
-        btnLogin.setOnClickListener(new OnClickListener() {
+            btnLogin.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
@@ -52,6 +55,7 @@ public class LoginActivity extends Activity {
                                     .show();
 
                             currentUser = username;
+                            global.setCurrentEmail(username);
                             Bundle bundle = new Bundle();
                             bundle.putString("currUser", currentUser);
 
@@ -90,9 +94,6 @@ public class LoginActivity extends Activity {
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(txtUserName.getWindowToken(), 0);
                 imm.hideSoftInputFromWindow(txtPassword.getWindowToken(), 0);
-
-
-
 
 
                 try {

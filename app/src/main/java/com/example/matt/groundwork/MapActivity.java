@@ -1,20 +1,18 @@
 package com.example.matt.groundwork;
 
 import android.location.Location;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -30,6 +28,8 @@ public class MapActivity extends FragmentActivity implements
     private String lastUpdate;
     private boolean requestingLocationUpdates = false;
     public TextView latText, lngText, timeText;
+
+    public DBAdapter db = new DBAdapter ();
 
     private static final String TAG = "MapActivity";
 
@@ -49,6 +49,12 @@ public class MapActivity extends FragmentActivity implements
         buildGoogleApiClient();
         googleApiClient.connect();
         setUpMapIfNeeded();
+
+        //db.updateLatAndLong(latText.toString(), lngText.toString());
+
+//        Toast.makeText(MapActivity.this, "lat = " + db.getLat(),
+//                Toast.LENGTH_LONG).show();
+
     }
 
     @Override

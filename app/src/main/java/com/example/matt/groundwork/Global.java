@@ -11,6 +11,28 @@ public class Global extends Application {
     public static Players ThisPlayer;
     public static int lookat=0;
 
+    private static Global instance;
+    private String email;
+
+    private Global() {}
+
+    public void setCurrentEmail(String curEmail)
+    {
+        this.email = curEmail;
+    }
+
+    public String getCurrentEmail()
+    {
+        return this.email;
+    }
+
+    public static synchronized Global getInstance(){
+        if(instance==null){
+            instance=new Global();
+        }
+        return instance;
+    }
+
     public static battlestorage GetBattle(int i){
         if (i<numberOfBattles)
             return Battles[i];
