@@ -35,6 +35,8 @@ public class MapActivity extends FragmentActivity implements
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate()");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
@@ -49,11 +51,15 @@ public class MapActivity extends FragmentActivity implements
 
         buildGoogleApiClient();
 
+        // function to connect initially?
+
         setUpMapIfNeeded();
     }
 
     @Override
     protected void onResume() {
+        Log.d(TAG, "onResume()");
+
         super.onResume();
         setUpMapIfNeeded();
         if(googleApiClient.isConnected() && !requestingLocationUpdates) {
@@ -63,12 +69,18 @@ public class MapActivity extends FragmentActivity implements
 
     @Override
     protected void onPause() {
+        Log.d(TAG, "onPause()");
+
         super.onPause();
-        stopLocationUpdates();
+        if(googleApiClient.isConnected()) {
+            stopLocationUpdates();
+        }
     }
 
     @Override
     public void onConnected(Bundle connectionHint) {
+        Log.d(TAG, "onConnected()");
+
         createLocationRequest();
         startLocationUpdates();
     }
@@ -85,6 +97,7 @@ public class MapActivity extends FragmentActivity implements
 
     @Override
     public void onLocationChanged(Location location) {
+        Log.d(TAG, "Location Changed");
         lastLocation = location;
         lastUpdate = DateFormat.getTimeInstance().format(new Date());
         updateUI();
@@ -96,6 +109,7 @@ public class MapActivity extends FragmentActivity implements
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API)
                 .build();
+        Log.d(TAG, "buildGoogleApiClient()");
     }
 
     protected void createLocationRequest() {
@@ -103,14 +117,17 @@ public class MapActivity extends FragmentActivity implements
         locationRequest.setInterval(10000);
         locationRequest.setFastestInterval(5000);
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        Log.d(TAG, "Location Request Created");
     }
 
     protected void startLocationUpdates() {
+        Log.d(TAG, "startLocationUpdates()");
         LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient, locationRequest, this);
         requestingLocationUpdates = true;
     }
 
     protected void stopLocationUpdates() {
+        Log.d(TAG, "stopLocationUpdates()");
         LocationServices.FusedLocationApi.removeLocationUpdates(googleApiClient, this);
         requestingLocationUpdates = false;
     }
@@ -120,6 +137,7 @@ public class MapActivity extends FragmentActivity implements
             latText.setText(String.valueOf(lastLocation.getLatitude()));
             lngText.setText(String.valueOf(lastLocation.getLongitude()));
             timeText.setText(lastUpdate);
+            Log.d(TAG, "UI Updated");
         }
     }
 
