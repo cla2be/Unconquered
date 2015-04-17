@@ -51,7 +51,7 @@ public class MapActivity extends FragmentActivity implements
 
         buildGoogleApiClient();
 
-        // function to connect initially?
+        // function to connect to google API client initially?
 
         setUpMapIfNeeded();
     }
