@@ -56,6 +56,7 @@ public class LoginActivity extends Activity {
                             bundle.putString("currUser", currentUser);
 
 
+
                                     Intent i = new Intent(getApplicationContext(),
                                             MainMenu.class);
                                     i.putExtras(bundle);
@@ -89,6 +90,11 @@ public class LoginActivity extends Activity {
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(txtUserName.getWindowToken(), 0);
                 imm.hideSoftInputFromWindow(txtPassword.getWindowToken(), 0);
+
+
+
+
+
                 try {
 
                     String username = txtUserName.getText().toString();
@@ -103,9 +109,18 @@ public class LoginActivity extends Activity {
 
                 }
 
+                Intent i = new Intent(getApplicationContext(),
+                        MailSignUp.class);
+                startActivity(i);
+                finish();
+
             }
         });
+
+
     }
+
+
 }
 
 
