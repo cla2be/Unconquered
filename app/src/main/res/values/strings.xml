@@ -38,5 +38,6 @@
     <string name="p">......</string>
 
     <string name="currentUser">Welcome %1$ to die!!</string>
+    <string name="title_activity_mail_sign_up">MailSignUp</string>
 
 </resources>
