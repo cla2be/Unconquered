@@ -35,8 +35,6 @@ public class MapActivity extends FragmentActivity implements
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d(TAG, "onCreate()");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
@@ -48,18 +46,13 @@ public class MapActivity extends FragmentActivity implements
         lngText = (TextView)findViewById(R.id.lngText);
         timeText = (TextView)findViewById(R.id.timeText);
 
-
         buildGoogleApiClient();
-
-        // function to connect to google API client initially?
-
+        googleApiClient.connect();
         setUpMapIfNeeded();
     }
 
     @Override
     protected void onResume() {
-        Log.d(TAG, "onResume()");
-
         super.onResume();
         setUpMapIfNeeded();
         if(googleApiClient.isConnected() && !requestingLocationUpdates) {
@@ -69,8 +62,6 @@ public class MapActivity extends FragmentActivity implements
 
     @Override
     protected void onPause() {
-        Log.d(TAG, "onPause()");
-
         super.onPause();
         if(googleApiClient.isConnected()) {
             stopLocationUpdates();
@@ -78,9 +69,16 @@ public class MapActivity extends FragmentActivity implements
     }
 
     @Override
-    public void onConnected(Bundle connectionHint) {
-        Log.d(TAG, "onConnected()");
+    protected void onStop() {
+        super.onStop();
+        if(googleApiClient.isConnected()) {
+            stopLocationUpdates();
+            googleApiClient.disconnect();
+        }
+    }
 
+    @Override
+    public void onConnected(Bundle connectionHint) {
         createLocationRequest();
         startLocationUpdates();
     }
@@ -93,11 +91,11 @@ public class MapActivity extends FragmentActivity implements
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
         Log.i(TAG, "Failed to connect to Location Services");
+        // put more functionality to try again
     }
 
     @Override
     public void onLocationChanged(Location location) {
-        Log.d(TAG, "Location Changed");
         lastLocation = location;
         lastUpdate = DateFormat.getTimeInstance().format(new Date());
         updateUI();
@@ -109,7 +107,6 @@ public class MapActivity extends FragmentActivity implements
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API)
                 .build();
-        Log.d(TAG, "buildGoogleApiClient()");
     }
 
     protected void createLocationRequest() {
@@ -117,7 +114,6 @@ public class MapActivity extends FragmentActivity implements
         locationRequest.setInterval(10000);
         locationRequest.setFastestInterval(5000);
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        Log.d(TAG, "Location Request Created");
     }
 
     protected void startLocationUpdates() {
@@ -137,7 +133,6 @@ public class MapActivity extends FragmentActivity implements
             latText.setText(String.valueOf(lastLocation.getLatitude()));
             lngText.setText(String.valueOf(lastLocation.getLongitude()));
             timeText.setText(lastUpdate);
-            Log.d(TAG, "UI Updated");
         }
     }
 
