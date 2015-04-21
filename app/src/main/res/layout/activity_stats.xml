@@ -222,7 +222,8 @@
             android:text="Menu"
             android:id="@+id/button4"
             android:layout_column="6"
-            android:onClick="CloseStats"/>
+            android:onClick="CloseStats"
+            android:background="#a60014ff" />
     </TableRow>
 
     <TableRow
@@ -401,7 +402,8 @@
             android:text="@string/SetMove"
             android:id="@+id/button7"
             android:layout_column="6"
-            android:onClick="MoveToSet" />
+            android:onClick="MoveToSet"
+            android:background="#a60014ff" />
 
     </TableRow>
 

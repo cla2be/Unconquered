@@ -36,7 +36,8 @@
             android:text="@string/LookAt"
             android:id="@+id/button8"
             android:layout_column="5"
-            android:onClick="OpenDetails" />
+            android:onClick="OpenDetails"
+            android:background="#a60014ff" />
     </TableRow>
 
 
@@ -58,7 +59,8 @@
             android:text="@string/LookAt"
             android:id="@+id/button9"
             android:layout_column="5"
-            android:onClick="OpenDetails" />
+            android:onClick="OpenDetails"
+            android:background="#a60014ff" />
     </TableRow>
 
     <TableRow
@@ -79,7 +81,8 @@
             android:text="@string/LookAt"
             android:id="@+id/button10"
             android:layout_column="5"
-            android:onClick="OpenDetails" />
+            android:onClick="OpenDetails"
+            android:background="#a60014ff" />
     </TableRow>
 
     <TableRow
@@ -100,7 +103,8 @@
             android:text="@string/LookAt"
             android:id="@+id/button11"
             android:layout_column="5"
-            android:onClick="OpenDetails" />
+            android:onClick="OpenDetails"
+            android:background="#a60014ff" />
     </TableRow>
 
     <TableRow
@@ -121,7 +125,8 @@
             android:text="@string/LookAt"
             android:id="@+id/button12"
             android:layout_column="5"
-            android:onClick="OpenDetails" />
+            android:onClick="OpenDetails"
+            android:background="#a60014ff" />
     </TableRow>
 
     <TableRow
@@ -142,7 +147,8 @@
             android:text="@string/LookAt"
             android:id="@+id/button13"
             android:layout_column="5"
-            android:onClick="OpenDetails" />
+            android:onClick="OpenDetails"
+            android:background="#a60014ff" />
     </TableRow>
 
     <TableRow
@@ -163,7 +169,8 @@
             android:text="@string/LookAt"
             android:id="@+id/button14"
             android:layout_column="5"
-            android:onClick="OpenDetails" />
+            android:onClick="OpenDetails"
+            android:background="#a60014ff" />
     </TableRow>
 
     <TableRow
@@ -184,7 +191,8 @@
             android:text="@string/LookAt"
             android:id="@+id/button15"
             android:layout_column="5"
-            android:onClick="OpenDetails" />
+            android:onClick="OpenDetails"
+            android:background="#a60014ff" />
     </TableRow>
 
     <TableRow
@@ -205,7 +213,8 @@
             android:text="@string/LookAt"
             android:id="@+id/button16"
             android:layout_column="5"
-            android:onClick="OpenDetails" />
+            android:onClick="OpenDetails"
+            android:background="#a60014ff" />
     </TableRow>
 
     <TableRow
@@ -226,7 +235,8 @@
             android:text="@string/LookAt"
             android:id="@+id/button17"
             android:layout_column="5"
-            android:onClick="OpenDetails" />
+            android:onClick="OpenDetails"
+            android:background="#a60014ff" />
     </TableRow>
 
     <TableRow
@@ -239,7 +249,8 @@
             android:text="Menu"
             android:id="@+id/button4"
             android:layout_column="0"
-            android:onClick="CloseFight"/>
+            android:onClick="CloseFight"
+            android:background="#8013ff00" />
 
         <Button
             android:layout_width="wrap_content"
@@ -247,6 +258,7 @@
             android:text="Refreash"
             android:id="@+id/button5"
             android:layout_column="5"
-            android:onClick="addFight"/>
+            android:onClick="addFight"
+            android:background="#98ff1700" />
     </TableRow>
 </TableLayout>

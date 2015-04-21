@@ -18,7 +18,7 @@ public class MainMenu extends ActionBarActivity {
 
 
 
-        Global.ThisPlayer= new Players(10,1,10,10,10,10);
+        Global.ThisPlayer= new Players(11,21,14,13,16,12);
 
         Moves Standard_Attack= new Moves("Basic Attack",Stat.Str,1,10,Ailments.None);
         Moves Standard_Attacks[] = new Moves[2];
