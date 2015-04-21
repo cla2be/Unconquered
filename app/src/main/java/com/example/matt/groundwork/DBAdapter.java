@@ -51,23 +51,32 @@ public class DBAdapter
         return mDb.insert(DATABASE_TABLE, null, initialValues);
     }
 
-//    public void updateLatAndLong(String latCoord, String longCoord)
-//    {
-////        ContentValues initalValues = new ContentValues();
-////        initalValues.put(KEY_LAT, latCoord);
-////        initalValues.put(KEY_LON, longCoord);
-//
-//        Cursor mCursor = mDb.rawQuery("update" + DATABASE_TABLE +  "set recentLat = " + latCoord + ", recentLong = " + longCoord + "where email = " + global.getCurrentEmail(),null);
-//
-//    }
+    public boolean updateLatAndLong(String latCoord, String longCoord)
+    {
+//        ContentValues initalValues = new ContentValues();
+//        initalValues.put(KEY_LAT, latCoord);
+//        initalValues.put(KEY_LON, longCoord);
 
-//    public String getLat()
-//    {
-//        Cursor mCursor = mDb.rawQuery("SELECT recentLat FROM " + DATABASE_TABLE + "WHERE username =?", new String[]{global.getCurrentEmail()});
-//        mCursor.moveToFirst();
-//        String str = mCursor.getString(mCursor.getColumnIndex("recentLat"));
-//        return str;
-//    }
+        Cursor mCursor = mDb.rawQuery("update" + DATABASE_TABLE +  "set recentLat = " + latCoord + ", recentLong = " + longCoord + "where email = " + global.getCurrentEmail(),null);
+
+        if(mCursor != null)
+        {
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
+    }
+
+    public String getLat()
+    {
+        Cursor mCursor = mDb.rawQuery("SELECT recentLat FROM " + DATABASE_TABLE + "WHERE username =?", new String[]{global.getCurrentEmail()});
+        mCursor.moveToFirst();
+        String str = mCursor.getString(mCursor.getColumnIndex("recentLat"));
+        return str;
+    }
 
     public boolean Login(String username, String password) throws SQLException
     {

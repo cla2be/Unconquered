@@ -50,7 +50,7 @@ public class MapActivity extends FragmentActivity implements
         googleApiClient.connect();
         setUpMapIfNeeded();
 
-        //db.updateLatAndLong(latText.toString(), lngText.toString());
+        //boolean update = db.updateLatAndLong(latText.toString(), lngText.toString());
 
 //        Toast.makeText(MapActivity.this, "lat = " + db.getLat(),
 //                Toast.LENGTH_LONG).show();
