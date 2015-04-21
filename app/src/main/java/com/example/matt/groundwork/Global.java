@@ -14,7 +14,7 @@ public class Global extends Application {
     private static Global instance;
     private String email;
 
-    private Global() {}
+    public Global() {}
 
     public void setCurrentEmail(String curEmail)
     {
